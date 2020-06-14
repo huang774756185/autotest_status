@@ -29,3 +29,9 @@ class TestCase(models.Model):
     case_author = models.CharField(max_length=10)
     case_create_time = models.DateTimeField("用例创建时间", auto_now_add=True)
     is_executable = models.CharField(max_length=1, default="1")
+
+    class Meta:
+        db_table = "test_case"
+
+    def __str__(self):
+        return str(self.case_id) + self.case_resume
